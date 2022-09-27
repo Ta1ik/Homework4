@@ -6,6 +6,9 @@ public class Main {
         Task4();
         Task5();
         Task6();
+        Task7();
+        Task8();
+        Task9();
     }
 
     public static void Task1() {
@@ -99,11 +102,11 @@ public class Main {
             System.out.println("Человек окончил университет иему пора искать первую работу");
         } else if (peopleAge >= 18) {
             System.out.println("Человек закончил школу и может отправляться в университет");
-        }
-        else if(peopleAge >= 7) {
+        } else if (peopleAge >= 7) {
             System.out.println("Ребенок ходит в школу");
         }
     }
+
     public static void Task6() {
     /*Вместимость одного вагона поезда составляет 102 человека. Вагон рассчитан на 60 сидячих мест, все остальные – стоячие.
 
@@ -125,7 +128,94 @@ public class Main {
         } else {
             System.out.println("Есть стоячие места");
         }
+    }
 
+    public static void Task7() {
+    /*Напишите программу, которая помогает определить в какое учреждение нужно отправить человека в зависимости от его возраста:
+
+    Если человеку от 2 до 6 лет, то ему нужно ходить в детский сад;
+    Если человек от 7 до 18 лет, то ему нужно ходить в школу;
+    Если человеку больше 18 лет, но меньше 24, то его место в университете;
+    А если человеку больше 24, то ему пора ходить на работу
+    При выполнении каждого условия программа должна выводить в консоль сообщение в формате :
+    "Если возраст человека равен … , то ему нужно ходить … (в зависимости от возраста дописать нужное)"
+     */
+        System.out.println(" ");
+        System.out.println("Задание №7");
+        int age = 12;
+        boolean goToKindergartden = (age > 2 && age <= 6);
+        boolean goToSchool = (age >= 7 && age < 18);
+        boolean goToUnivesity = (age >= 18 && age < 24);
+        boolean goToWork = (age >= 24);
+        if (goToWork) {
+            System.out.println("Если возраст человека равен " + age + " ,то ему нужно ходить на работу");
+        }
+        if (goToUnivesity) {
+            System.out.println("Если возраст человека равен " + age + " ,то ему нужно ходить в университет");
+        }
+        if (goToSchool) {
+            System.out.println("Если возраст человека равен " + age + " ,то ему нужно ходить в школу");
+        }
+        if (goToKindergartden) {
+            System.out.println("Если возраст человека равен " + age + " ,то ему нужно ходить в детский сад");
+        }
+    }
+
+    public static void Task8() {
+    /*Как правило, на аттракционах действуют ограничения и для детей по возрасту:
+
+    Если ребенку меньше 5 лет, то он не может кататься на аттракционе.
+    Если ребенку больше 5, но меньше 14 лет, то он может кататься только в сопровождении взрослого. Если взрослого нет, то кататься нельзя.
+    Если ребенок старше 14 лет, то он может кататься без сопровождения взрослого.
+    Напишите программу, которая выводит в консоль сообщение о том, можно ли ребенку кататься одному или в сопровождении взрослого
+    в зависимости от того, сколько ему лет.
+     */
+        System.out.println(" ");
+        System.out.println("Задание №8");
+    int age = 13;
+    boolean withParrents = true;
+    if (age < 5 ){
+        System.out.println("Нельзя кататься на аттракционе");
+    }
+    if (age >= 5 && age < 14 && withParrents){
+        System.out.println("Можно кататься только в сопровождении взрослого.");
+        }
+    else {
+        System.out.println("Нельзя кататься на аттракционе");
+    }
+    if (age >= 14 ){
+        System.out.println("Можно кататься без сопровождения взрослого");
+        }
+    }
+    public static void Task9() {
+    /*Даны три числа:
+
+    int one;
+    int two;
+    int three;
+    С помощью условного оператора и конструкции else напишите программу, которая вычисляет, какое из трех чисел бОльшее и выводит результат в консоль.
+     */
+        System.out.println(" ");
+        System.out.println("Задание №9");
+    int one = 2;
+    int two = 1;
+    int three = 12;
+    boolean first = one>two && one>three;
+    boolean second = two>one && two>three;
+    boolean third = three>one && three>two;
+
+    if (first){
+        System.out.println("Большее чисто: " + one);
+    }
+    if (second){
+        System.out.println("Большее чисто: " + two);
+        }
+    if (third){
+        System.out.println("Большее чисто: " + three);
+        } else {
+        System.out.println("Числа равны");
+    }
 
     }
+
 }
